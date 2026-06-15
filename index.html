@@ -160,6 +160,76 @@
     background: var(--ink-soft);
   }
 
+  /* ---------- ANNOUNCEMENT ---------- */
+  .announce {
+    background: var(--ink);
+    color: var(--bg);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+
+  .announce-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .announce-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 72ch;
+  }
+
+  .announce-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--highlight);
+  }
+
+  .announce-title {
+    font-family: 'Spectral', serif;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--bg);
+  }
+
+  .announce-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .announce-venue {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+  }
+
+  .announce-cta {
+    background: var(--highlight);
+    color: var(--ink);
+    border-color: var(--highlight);
+    white-space: nowrap;
+  }
+
+  .announce-cta:hover {
+    background: transparent;
+    color: var(--highlight);
+    border-color: var(--highlight);
+  }
+
   /* ---------- HERO ---------- */
   .hero {
     padding: 120px 0 100px;
@@ -280,6 +350,16 @@
   }
 
   .prose-body p:last-child { margin-bottom: 0; }
+
+  .prose-body a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: opacity 0.15s;
+  }
+
+  .prose-body a:hover { opacity: 0.65; }
 
   .pull {
     border-left: 2px solid var(--accent);
@@ -721,6 +801,8 @@
     .principle { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 0 !important; }
     .principle:last-child { border-bottom: none; }
     .hero-meta { gap: 18px; }
+    .announce-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .announce-cta { width: 100%; text-align: center; }
   }
 </style>
 
@@ -736,6 +818,7 @@
   <div class="nav-inner">
     <a href="#" class="brand" aria-label="Legaltech Field Notes"><img src="lfn-logo.jpg" alt="Legaltech Field Notes"></a>
     <div class="nav-links">
+      <a href="#issue01">Issue 01</a>
       <a href="#concept">Idea</a>
       <a href="#format">Format</a>
       <a href="#principles">How it works</a>
@@ -744,18 +827,31 @@
   </div>
 </nav>
 
+<!-- ANNOUNCEMENT -->
+<div class="announce">
+  <div class="announce-inner">
+    <div class="announce-text">
+      <span class="announce-label">Issue 01 · First evening · Mon 29 June 2026 · Doors 18:30</span>
+      <span class="announce-title serif">Surveying the Terrain: the state of legal AI</span>
+      <span class="announce-desc">A survey of the legal AI landscape: the product stack taking shape, the models beneath it, and how well they fit the way lawyers actually work. A twenty-minute primer and Q&amp;A, with drinks, refreshments and networking afterwards.</span>
+      <span class="announce-venue">Barclays Innovation Hub, powered by Eagle Labs · 41 Luke Street, London, EC2A 4DP</span>
+    </div>
+    <a class="btn announce-cta" href="https://www.eventbrite.co.uk/e/1990077640795" target="_blank" rel="noopener">Get tickets →</a>
+  </div>
+</div>
+
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
     <div class="hero-meta">
       <span>London</span>
       <span>Six times a year</span>
-      <span>Issue 01, June 2026</span>
+      <span>Issue 01 · Mon 29 June 2026</span>
     </div>
     <h1 class="hero-title serif">Exploring the stack of <em>fast moving legal innovation.</em></h1>
     <p class="hero-lede">A bi-monthly London gathering for technically minded lawyers in-house and at firms, innovation leads and solution builders. One topic per evening, a presentation and tech-stack discussion, a couple of demos, and shared experiences.</p>
     <div class="hero-ctas">
-      <a href="#signup" class="btn">Request an invitation</a>
+      <a href="#signup" class="btn">Join our mailing list</a>
       <a href="#concept" class="btn btn-ghost">The idea</a>
     </div>
   </div>
@@ -785,6 +881,23 @@
   </div>
 </section>
 
+<!-- ISSUE 01 TOPIC -->
+<section id="issue01" class="prose-section">
+  <div class="wrap-narrow">
+    <div class="eyebrow">Issue 01 · Monday 29 June 2026</div>
+    <h2 class="prose-title serif">Surveying the Terrain.</h2>
+    <p style="font-family: 'Spectral', serif; font-weight: 300; font-size: 22px; line-height: 1.5; color: var(--ink-mid); max-width: 60ch; margin-bottom: 40px;">The state of legal AI: the stack, user expectations and adoption.</p>
+    <div class="prose-body">
+      <p>Issue 01 maps the emerging legal AI stack and the models beneath it, recognising that we're at the break of dawn and much is still fluid. It looks at what AI has enabled in the last 12 months, the product categories taking shape, and the technologies and integrations behind them, and how well these map to the daily workflows and pain points of lawyers across different areas of practice.</p>
+      <p>The session asks whether they answer a real user need with genuine product-market fit, and how they sit with the tools lawyers rely on every day, from the DMS to the MS suite. It also looks at the issues specific to AI adoption and utility: the context of the matter and the firm, formal and informal knowledge, and PII and data security.</p>
+    </div>
+    <div style="margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap;">
+      <a href="https://www.eventbrite.co.uk/e/1990077640795" target="_blank" rel="noopener" class="btn">Get tickets →</a>
+      <a href="#signup" class="btn btn-ghost">Subscribe to the field notes</a>
+    </div>
+  </div>
+</section>
+
 <!-- CONCEPT -->
 <section id="concept" class="prose-section">
   <div class="wrap-narrow">
@@ -794,7 +907,7 @@
       <p>Legaltech has never witnessed such rapid change. In the next five years, the practice and delivery of law by leaders will likely change more than in the previous 500. Staying current is hard, and the gap between those who are keeping pace and those who aren't is widening fast. This is the place for those who wish to be at the front.</p>
       <p>Legaltech Field Notes aims to solve this with a bi-monthly London gathering for innovation leads at law firms and in-house teams, together with developers. Each evening focuses on one main topic — a presentation that explores the actual tech stack and what's genuinely innovative (not a pitch) — an interview and a couple of demos. All focussed on developments that have only become possible in the last year. What's said on stage will be written up as Field Notes for those unable to attend. Conversations afterwards are held under Chatham House rules.</p>
       <div class="pull">Just as the Silicon Valley Homebrew Club nurtured startups including Apple, so we want LFN to be open and collaborative — sharing understanding and insights, and getting into the technical details that determine solution performance, reliability and security. This is for those who know an API from an MCP, marvel at code generation from their prompts, and might spend their weekend setting up personal automation with OpenClaw.</div>
-      <p>It is independent of any event organiser or vendor, with support from AiLA. Attendance is free and by invitation.</p>
+      <p>It is independent of any event organiser or vendor, with support from <a href="https://www.trustaila.com" target="_blank" rel="noopener">AiLA</a>. Attendance is free and by invitation.</p>
     </div>
   </div>
 </section>
@@ -885,7 +998,7 @@
   <div class="wrap">
     <div class="eyebrow">Get involved</div>
     <h2 class="prose-title serif">Help shape the first few meetups.</h2>
-    <p style="font-family: 'Spectral', serif; font-size: 19px; font-weight: 300; line-height: 1.6; color: var(--ink-mid); max-width: 60ch;">The venue and date for the first evening are being finalised. We'd like to hear from people willing to help choose topics, present, or simply suggest who else should be in the room.</p>
+    <p style="font-family: 'Spectral', serif; font-size: 19px; font-weight: 300; line-height: 1.6; color: var(--ink-mid); max-width: 60ch;">Issue 01 is set for Monday 29 June 2026 at the Barclays Innovation Hub. Beyond it, we'd like to hear from people willing to help choose topics, present, or simply suggest who else should be in the room.</p>
     <div class="who-grid">
       <div class="who-block">
         <h3 class="serif">Helping curate</h3>
@@ -934,7 +1047,7 @@
     </details>
     <details>
       <summary>When's the first one?</summary>
-      <p>We are aiming for end of June 2026. The interest list hears first when the date, topic and presenter are confirmed.</p>
+      <p>Issue 01 is confirmed for Monday 29 June 2026, doors at 18:30, at the Barclays Innovation Hub on Luke Street. Tickets are on <a href="https://www.eventbrite.co.uk/e/1990077640795" target="_blank" rel="noopener">Eventbrite</a>.</p>
     </details>
   </div>
 </section>
@@ -944,7 +1057,7 @@
   <div class="wrap">
     <div class="signup-grid">
       <div>
-        <div class="eyebrow">Request an invitation</div>
+        <div class="eyebrow">Join our mailing list</div>
         <h2 class="signup-title serif">Get on the <em>founding list.</em></h2>
         <p class="signup-lede">Attendance is by invitation, partly to keep the room weighted toward people exploring the technology rather than selling into it. Whether you'd like to come along, help curate, present, demo, or simply subscribe to the field notes, leave your details. We will be in touch as issue 01 firms up.</p>
 
@@ -966,7 +1079,7 @@
         </div>
 
         <div style="margin-top: 40px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase;">
-          <div>Issue 01: end of June 2026</div>
+          <div>Issue 01: Monday 29 June 2026, 18:30</div>
         </div>
       </div>
       <form class="signup-form" action="https://formspree.io/f/mwvzobro" method="POST" onsubmit="lfnSubmit(event)">
@@ -998,7 +1111,7 @@
           <textarea id="lfn-message" name="message" placeholder="Optional. A topic you'd like to see covered, someone we should approach, a question"></textarea>
         </div>
         <input type="hidden" name="_append" value="true">
-        <button class="btn btn-submit" type="submit">Request invitation</button>
+        <button class="btn btn-submit" type="submit">Join our mailing list</button>
       </form>
       <script>
         async function lfnSubmit(event) {
